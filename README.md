@@ -30,6 +30,7 @@ Cada linha no conjunto de dados representa um paciente e contém as seguintes in
 Foram realizadas as seguintes etapas:
 
 - **Tratamento de valores ausentes:** entradas com `NaN` foram removidas.
+- **Remoção de valores pequenos:** a categoria "Other" na variável `gender` e "Never_worked" na variável `work_type` foram removidasp or conterem pouquíssimas observações.
 - **Codificação de variáveis categóricas:** foi aplicada `dummificação` nas variáveis como `work_type`, `smoking_status` e `gender` para transformar categorias em variáveis binárias. Além de mapeamento das variáveis binárias para transformá-las em 0's ou 1's.
 - **Escalonamento:** variáveis contínuas (`age`, `bmi`, `avg_glucose_level`) foram padronizadas com `StandardScaler` para deixá-las aplicáveis a qualquer modelo.
 
