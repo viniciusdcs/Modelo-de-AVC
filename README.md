@@ -49,7 +49,7 @@ Foram realizadas as seguintes etapas:
 
 - Os dados foram divididos em treino (85%) e teste (15%), com **estratificação**, para manter a proporção de classes.
 - Foi aplicada **validação cruzada com 5 folds** no conjunto de treino, com otimização de hiperparâmetros usando **RandomizedSearchCV**.
-- A métrica principal usada foi o **F1-score**, seguido pelo **recall** e **acurácia**. O desempenho foi, respectivamente, **95,90%**, **96,72%** e **95,87%**.
+- A métrica principal usada foi o **recall**, seguido pelo **F1-score** e **acurácia**. O desempenho foi, respectivamente, **97,58%**, **95,40%** e **95,30%**.
 
 ---
 
