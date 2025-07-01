@@ -3,7 +3,7 @@ import pandas as pd
 import joblib
 
 # Carregar o modelo e o scaler salvos
-modelo = joblib.load("modelo_otimizado.pkl")
+modelo = joblib.load("modelo_otimizado_comprimido.pkl")
 scaler = joblib.load("scaler_variaveis.pkl")
 
 st.title("Previsão de Risco de AVC")
