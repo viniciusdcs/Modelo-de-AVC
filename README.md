@@ -1,7 +1,5 @@
 # Modelo-de-AVC
 
-## 🧠 Explicação do Problema
-
 Segundo a Organização Mundial da Saúde (OMS), o Acidente Vascular Cerebral (AVC) é a **segunda principal causa de morte no mundo**, sendo responsável por aproximadamente **11% de todos os óbitos globais**.
 
 Este projeto utiliza um conjunto de dados clínicos com informações sobre pacientes, com o objetivo de **prever a ocorrência de AVC** com base em variáveis como idade, hipertensão, doenças cardíacas, tipo de trabalho, estado civil e tabagismo.
@@ -25,33 +23,34 @@ Cada linha no conjunto de dados representa um paciente e contém as seguintes in
 
 ---
 
-## ⚙️ Processo e Justificativa
+## Processo e Justificativa
 
-### 🧹 Pré-processamento
+### Limpeza dos dados 🧹
 
 Foram realizadas as seguintes etapas:
 
-- **Tratamento de valores ausentes:** entradas com `Unknown` ou `NaN` foram mantidas ou codificadas apropriadamente.
-- **Codificação de variáveis categóricas:** foi aplicada codificação `one-hot` nas variáveis como `work_type`, `smoking_status` e `gender` para transformar categorias em variáveis binárias.
-- **Escalonamento:** variáveis contínuas (`age`, `bmi`, `avg_glucose_level`) foram padronizadas com `StandardScaler` para melhorar o desempenho dos modelos.
+- **Tratamento de valores ausentes:** entradas com `NaN` foram removidas.
+- **Codificação de variáveis categóricas:** foi aplicada `dummificação` nas variáveis como `work_type`, `smoking_status` e `gender` para transformar categorias em variáveis binárias. Além de mapeamento das variáveis binárias para transformá-las em 0's ou 1's.
+- **Escalonamento:** variáveis contínuas (`age`, `bmi`, `avg_glucose_level`) foram padronizadas com `StandardScaler` para deixá-las aplicáveis a qualquer modelo.
 
-### 🧠 Modelo de Machine Learning
+### Escolha do Modelo
 
 - Foi escolhido o **Random Forest Classifier**, por ser:
   - Robusto a dados desbalanceados
-  - Capaz de lidar com variáveis categóricas e numéricas sem necessidade de normalidade
+  - Capaz de lidar com variáveis categóricas e numéricas sem necessidade de pressupostos como modelos lineares
   - Interpretável e eficiente em datasets tabulares
+  - Relativamente simples
 
 ### ⚖️ Balanceamento de classes
 
-- Como a variável alvo (`stroke`) é fortemente desbalanceada, foi utilizado **SMOTE (Synthetic Minority Oversampling Technique)** para gerar amostras sintéticas da classe minoritária e equilibrar o conjunto de dados.
+- Como a variável alvo (`stroke`) é fortemente desbalanceada, foi utilizado **SMOTE** para gerar amostras sintéticas da classe minoritária e equilibrar o conjunto de dados.
 
-### 🔍 Validação
+### Validação
 
 - Os dados foram divididos em treino (85%) e teste (15%), com **estratificação**, para manter a proporção de classes.
 - Foi aplicada **validação cruzada com 5 folds** no conjunto de treino, com otimização de hiperparâmetros usando **RandomizedSearchCV**.
-- A métrica principal usada foi o **F1-score**, que equilibra precisão e recall, ideal para problemas com classes desbalanceadas.
+- A métrica principal usada foi o **F1-score**, seguido pelo **recall** e **acurácia**. O desempenho foi, respectivamente, **95,90%**, **96,72%** e **95,87%**.
 
 ---
 
-🎯 Com isso, foi possível criar uma aplicação capaz de prever com boa acurácia e sensibilidade o risco de AVC a partir de dados clínicos simples, com uma interface interativa via **Streamlit**.
+Dessa forma, foi possível obter um modeol capaz de prever eficazmente o risco de AVC a partir de dados clínicos.
