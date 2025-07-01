@@ -41,7 +41,7 @@ Foram realizadas as seguintes etapas:
   - Interpretável e eficiente em datasets tabulares
   - Relativamente simples
 
-### ⚖️ Balanceamento de classes
+### Balanceamento de classes
 
 - Como a variável alvo (`stroke`) é fortemente desbalanceada, foi utilizado **SMOTE** para gerar amostras sintéticas da classe minoritária e equilibrar o conjunto de dados.
 
@@ -54,3 +54,7 @@ Foram realizadas as seguintes etapas:
 ---
 
 Dessa forma, foi possível obter um modeol capaz de prever eficazmente o risco de AVC a partir de dados clínicos.
+
+## Repositório
+
+Este repositório está estruturado em 2 arquivos pickle, um do modelo e outro do scaler utilizado nas variáveis numéricas. Além disso, um jupyter notebook contendo etapas de EDA, pré-processamento de dados e modelagem e um arquivo python com a aplicação streamlit.
