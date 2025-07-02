@@ -1,4 +1,4 @@
-# Modelo-de-AVC
+# Modelo de AVC
 
 Segundo a Organização Mundial da Saúde (OMS), o Acidente Vascular Cerebral (AVC) é a **segunda principal causa de morte no mundo**, sendo responsável por aproximadamente **11% de todos os óbitos globais**.
 
